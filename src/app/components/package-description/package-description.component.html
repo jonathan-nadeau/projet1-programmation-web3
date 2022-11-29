@@ -1,0 +1,55 @@
+<section>
+  <div class="container package-description">
+    <div class="package-description__header">
+      <h2>
+        {{ package.name
+        }}<mat-icon
+          class="icon"
+          color="accent"
+          [ngClass]="!package.premium ? 'hidden' : ''"
+          >workspace_premium</mat-icon
+        >
+      </h2>
+      <p>{{ package.code }}</p>
+    </div>
+    <div class="package-description__body">
+      <p class="description">{{ package.description }}</p>
+      <p>
+        Date d'arriver: <span>{{ dateToString(package.startDate) }}</span>
+      </p>
+      <p>
+        Date de départ: <span>{{ dateToString(package.endDate) }}</span>
+      </p>
+    </div>
+    <div class="package-description__location-info">
+      <h3>Établissement</h3>
+      <p class="package-description__location-info--name">
+        {{ package.establishment.name }}
+      </p>
+      <p class="description">{{ package.establishment.description }}</p>
+      <address>
+        {{ package.establishment.contactDetails.address }},
+        {{ package.establishment.contactDetails.city }},
+        {{ package.establishment.contactDetails.postalCode }}
+      </address>
+    </div>
+    <div class="package-description__price-info">
+      <app-package-price
+        [price]="package.price"
+        [newPrice]="package.newPrice"
+      ></app-package-price>
+    </div>
+    <div class="package-description__review">
+      <h3>Avis</h3>
+      <p *ngFor="let review of package.review">
+        <span>
+          <mat-icon *ngFor="let star of [].constructor(review.scoreOutOfTen)"
+            >star
+          </mat-icon>
+          <span>({{ review.scoreOutOfTen }})</span>
+        </span>
+        <span>{{ review.commentary }}</span>
+      </p>
+    </div>
+  </div>
+</section>

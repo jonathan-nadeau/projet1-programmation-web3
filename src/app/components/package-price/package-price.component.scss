@@ -1,0 +1,10 @@
+@use "@angular/material" as mat;
+
+.packagePrice {
+  text-align: end;
+}
+
+.textLineThrough {
+  text-decoration: line-through;
+  color: lighten(black, 50%);
+}

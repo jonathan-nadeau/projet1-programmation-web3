@@ -1,0 +1,18 @@
+@use "@angular/material" as mat;
+
+.packageCard {
+  height: 100%;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  @include mat.elevation-transition();
+  @include mat.elevation(2);
+
+  &:hover,
+  &:focus {
+    @include mat.elevation(8);
+  }
+
+  &__body {
+    padding: 1rem 0;
+  }
+}

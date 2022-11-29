@@ -1,0 +1,24 @@
+<mat-card class="packageCard">
+  <mat-card-title-group>
+    <mat-card-title>{{ package.name.toLocaleUpperCase() }}</mat-card-title>
+    <mat-card-subtitle>{{ package.establishment.name }}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-divider [inset]="true"></mat-divider>
+  <mat-card-content class="packageCard__body">
+    <p>
+      Date de début:
+      <span class="bolder">{{ dateToString(package.startDate) }}</span>
+    </p>
+    <p>
+      Date de fin:
+      <span class="bolder">{{ dateToString(package.endDate) }}</span>
+    </p>
+  </mat-card-content>
+  <mat-divider [inset]="true"></mat-divider>
+  <mat-card-content class="packageCard__body">
+    <app-package-price
+      [price]="package.price"
+      [newPrice]="package.newPrice"
+    ></app-package-price>
+  </mat-card-content>
+</mat-card>

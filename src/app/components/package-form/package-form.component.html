@@ -1,0 +1,96 @@
+<section>
+  <div class="container package-form">
+    <h2>Complétez le formulaire pour ajouter un nouveau forfait</h2>
+
+    <form [formGroup]="packageForm">
+      <h3>Forfait</h3>
+
+      <mat-checkbox
+        formControlName="isPremium"
+        labelPosition="before"
+        class="checkbox"
+        >Forfait Premium</mat-checkbox
+      >
+      <mat-form-field appearance="fill">
+        <mat-label>Nom du forfait</mat-label>
+        <input matInput type="text" formControlName="packageName" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          class="text-area"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Durée du séjour</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input
+            matStartDate
+            placeholder="Date d'arrivée"
+            formControlName="startDate"
+          />
+          <input
+            matEndDate
+            placeholder="Date de départ"
+            formControlName="endDate"
+          />
+        </mat-date-range-input>
+        <mat-hint>JJ/MM/AAAA - JJ/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Prix</mat-label>
+        <input matInput type="number" formControlName="price" step="0.05" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Nouveau prix</mat-label>
+        <input matInput type="number" formControlName="newPrice" step="0.05" />
+      </mat-form-field>
+
+      <h3>Établissement</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom de l'établissement</mat-label>
+        <input matInput type="text" formControlName="establishmentName" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          formControlName="establishmentDescription"
+          class="text-area"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label> Address </mat-label>
+        <input matInput type="text" formControlName="establishmentAddress" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Ville</mat-label>
+        <input matInput type="text" formControlName="establishmentCity" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Code postal</mat-label>
+        <input matInput type="text" formControlName="establishmentPostalCode" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Téléphone</mat-label>
+        <input matInput type="tel" formControlName="establishmentPhoneNumber" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Courriel</mat-label>
+        <input matInput type="email" formControlName="establishmentEmail" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Site web de l'établissement</mat-label>
+        <input matInput type="text" formControlName="establishmentWebsite" />
+      </mat-form-field>
+      <button mat-flat-button color="primary">SOUMETTRE</button>
+    </form>
+  </div>
+</section>

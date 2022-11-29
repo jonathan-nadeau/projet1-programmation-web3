@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import DATA from '../MOCK.json';
+import { IPackage } from './types';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'project1-programmation-web3';
+  packages = DATA as IPackage[];
 }

@@ -1,0 +1,65 @@
+.package-description {
+  padding: 1rem 0;
+  border-bottom: 1px solid gray;
+
+  &__header {
+    margin-bottom: 2rem;
+    h2 {
+      letter-spacing: 0.1rem;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      .mat-icon {
+        margin-left: 1rem;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    p {
+      opacity: 0.8;
+    }
+  }
+
+  &__body {
+    margin-bottom: 2rem;
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__location-info {
+    margin-bottom: 2rem;
+
+    &--name {
+      opacity: 0.8;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__review {
+    margin-bottom: 1rem;
+    p {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      span {
+        display: flex;
+        align-items: center;
+      }
+      .mat-icon {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}

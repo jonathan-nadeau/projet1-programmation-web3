@@ -1,0 +1,35 @@
+.package-form {
+  padding: 2rem 0;
+  h2 {
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    .mat-form-field {
+      width: 50%;
+    }
+
+    .text-area {
+      height: 7rem;
+    }
+
+    .checkbox {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    button {
+      width: fit-content;
+    }
+  }
+}

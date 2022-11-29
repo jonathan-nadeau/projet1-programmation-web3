@@ -1,0 +1,10 @@
+<div class="packagePrice">
+  <p [ngClass]="isNewPrice() ? 'textLineThrough' : ''">
+    <span class="bolder">{{ price + " " }}</span
+    >$
+  </p>
+  <p *ngIf="isNewPrice()">
+    <span class="bolder">{{ newPrice + " " }}</span
+    >$
+  </p>
+</div>
