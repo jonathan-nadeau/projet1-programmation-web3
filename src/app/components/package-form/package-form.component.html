@@ -2,7 +2,7 @@
   <div class="container package-form">
     <h2>Complétez le formulaire pour ajouter un nouveau forfait</h2>
 
-    <form [formGroup]="packageForm">
+    <form [formGroup]="package">
       <h3>Forfait</h3>
 
       <mat-checkbox
@@ -13,7 +13,7 @@
       >
       <mat-form-field appearance="fill">
         <mat-label>Nom du forfait</mat-label>
-        <input matInput type="text" formControlName="packageName" />
+        <input matInput type="text" formControlName="name" />
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Description</mat-label>
@@ -53,43 +53,47 @@
         <input matInput type="number" formControlName="newPrice" step="0.05" />
       </mat-form-field>
 
-      <h3>Établissement</h3>
-      <mat-form-field appearance="fill">
-        <mat-label>Nom de l'établissement</mat-label>
-        <input matInput type="text" formControlName="establishmentName" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
-        <textarea
-          matInput
-          formControlName="establishmentDescription"
-          class="text-area"
-        ></textarea>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label> Address </mat-label>
-        <input matInput type="text" formControlName="establishmentAddress" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Ville</mat-label>
-        <input matInput type="text" formControlName="establishmentCity" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Code postal</mat-label>
-        <input matInput type="text" formControlName="establishmentPostalCode" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Téléphone</mat-label>
-        <input matInput type="tel" formControlName="establishmentPhoneNumber" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Courriel</mat-label>
-        <input matInput type="email" formControlName="establishmentEmail" />
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Site web de l'établissement</mat-label>
-        <input matInput type="text" formControlName="establishmentWebsite" />
-      </mat-form-field>
+      <div formGroupName="establishment">
+        <h3>Établissement</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Nom de l'établissement</mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            formControlName="description"
+            class="text-area"
+          ></textarea>
+        </mat-form-field>
+        <div formGroupName="contactDetails">
+          <mat-form-field appearance="fill">
+            <mat-label> Address </mat-label>
+            <input matInput type="text" formControlName="address" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Ville</mat-label>
+            <input matInput type="text" formControlName="city" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Code postal</mat-label>
+            <input matInput type="text" formControlName="postalCode" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Téléphone</mat-label>
+            <input matInput type="tel" formControlName="phoneNumber" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Courriel</mat-label>
+            <input matInput type="email" formControlName="email" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Site web de l'établissement</mat-label>
+            <input matInput type="text" formControlName="website" />
+          </mat-form-field>
+        </div>
+      </div>
       <button mat-flat-button color="primary">SOUMETTRE</button>
     </form>
   </div>

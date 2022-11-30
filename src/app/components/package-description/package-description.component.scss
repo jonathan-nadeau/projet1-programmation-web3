@@ -2,6 +2,14 @@
   padding: 1rem 0;
   border-bottom: 1px solid gray;
 
+  &__categories {
+    font-weight: 600;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
   &__header {
     margin-bottom: 2rem;
     h2 {

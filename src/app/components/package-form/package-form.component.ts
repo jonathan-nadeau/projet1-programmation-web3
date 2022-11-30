@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-package-form',
@@ -7,24 +7,29 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./package-form.component.scss'],
 })
 export class PackageFormComponent implements OnInit {
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
-  packageForm = new FormGroup({
-    packageName: new FormControl(''),
-    description: new FormControl(''),
-    establishmentName: new FormControl(''),
-    establishmentDescription: new FormControl(''),
-    establishmentAddress: new FormControl(''),
-    establishmentCity: new FormControl(''),
-    establishmentPostalCode: new FormControl(''),
-    establishmentPhoneNumber: new FormControl(''),
-    establishmentEmail: new FormControl(''),
-    establishmentWebsite: new FormControl(''),
-    startDate: new FormControl(''),
-    endDate: new FormControl(''),
-    isPremium: new FormControl(false),
-    price: new FormControl(0.0),
-    newPrice: new FormControl(0.0),
+  package = this.fb.group({
+    name: ['', Validators.required],
+    description: ['', Validators.required],
+    categories: this.fb.array([]),
+    establishment: this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      contactDetails: this.fb.group({
+        address: ['', Validators.required],
+        city: ['', Validators.required],
+        postalCode: ['', Validators.required],
+        phoneNumber: ['', Validators.pattern(/^\d{10}$/)],
+        email: ['', Validators.email],
+        website: ['', Validators.required],
+      }),
+    }),
+    startDate: ['', Validators.required],
+    endDate: ['', Validators.required],
+    isPremium: [''],
+    price: [0.0, Validators.required],
+    newPrice: [0.0],
   });
 
   ngOnInit(): void {}

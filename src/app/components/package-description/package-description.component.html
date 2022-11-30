@@ -11,6 +11,12 @@
         >
       </h2>
       <p>{{ package.code }}</p>
+      <p class="package-description__categories">
+        Catégories:
+        <span *ngFor="let category of package.categories">
+          {{ category }}, {{ " " }}
+        </span>
+      </p>
     </div>
     <div class="package-description__body">
       <p class="description">{{ package.description }}</p>
